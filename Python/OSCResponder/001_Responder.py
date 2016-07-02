@@ -13,7 +13,7 @@ the basic structures of that file to implement a very simple bi-directional comm
 import socket, OSC, re, time, threading, math
 from random import randint
 
-receive_address = '127.0.0.1', 7002 #Mac Adress, Outgoing Port
+receive_address = '127.0.0.1', 9999 #Mac Adress, Outgoing Port
 send_address = '127.0.0.1', 57120
 
 class PiException(Exception):
@@ -59,9 +59,10 @@ s.addMsgHandler("/address/here", handler1)
 """
 
 def heartbeat(add, tags, stuff, source):
+	print "HEARTBEAT RECIEVED!"
     #things.do
 
-s.addMsgHandler("/address/here", handler1)
+s.addMsgHandler("/heartbeat/1", heartbeat)
 
 
 
