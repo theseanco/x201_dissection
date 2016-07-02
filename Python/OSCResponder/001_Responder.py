@@ -10,11 +10,11 @@ the basic structures of that file to implement a very simple bi-directional comm
 
 #!/usr/bin/env python
 
-import socket, OSC, re, time, threading, math
+import socket, OSC, re, time, threading, math, struct
 from random import randint
 
 receive_address = '127.0.0.1', 9999 #Mac Adress, Outgoing Port
-send_address = '127.0.0.1', 57120
+send_address = '127.0.0.1', 7700
 
 class PiException(Exception):
 	def __init__(self, value):
@@ -60,6 +60,16 @@ s.addMsgHandler("/address/here", handler1)
 
 def heartbeat(add, tags, stuff, source):
 	print "HEARTBEAT RECIEVED!"
+	decoded = OSC.decodeOSC(stuff[0])
+	print decoded
+	oscmsg = OSC.OSCMessage()
+	oscmsg.setAddress("/heartbeat/on")
+	# adding the CPU usage value to the message, this can be mapped later.
+	oscmsg.append(decoded[7])
+	c.send(oscmsg)
+	#send message to QLC here. Note that decoded is now a list an i can Use
+	# things within it to control stuff in QLC
+
     #things.do
 
 s.addMsgHandler("/heartbeat/1", heartbeat)
