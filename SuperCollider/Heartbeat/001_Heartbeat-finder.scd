@@ -6,5 +6,4 @@
 OSCFunc({|msg| msg.postln},'/status.reply')
 
 //a function to bag this and send it on to Python, which will then print it and send it to a relevant channel/scene/function in QLC+
-//'dum' denotes the heartbeat being sent
-OSCFunc({|msg| ~python.sendMsg("/heartbeat/1",msg); "dum".postln},'/status.reply')
+OSCFunc({|msg| ~python.sendMsg("/heartbeat/1",msg)},'/status.reply')

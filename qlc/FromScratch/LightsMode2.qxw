@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace>
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="VirtualConsole">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.10.4</Version>
+  <Author>smc</Author>
+ </Creator>
+ <Engine>
+  <InputOutputMap>
+   <Universe Name="Universe 1" ID="0" Passthrough="False">
+    <Input Plugin="OSC" Line="0" Profile="None"/>
+   </Universe>
+   <Universe Name="Universe 2" ID="1" Passthrough="False"/>
+   <Universe Name="Universe 3" ID="2" Passthrough="False"/>
+   <Universe Name="Universe 4" ID="3" Passthrough="False"/>
+  </InputOutputMap>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>0</ID>
+   <Name>LED Bar 240/8 RGB #1</Name>
+   <Universe>0</Universe>
+   <Address>0</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>1</ID>
+   <Name>LED Bar 240/8 RGB #2</Name>
+   <Universe>0</Universe>
+   <Address>24</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>2</ID>
+   <Name>LED Bar 240/8 RGB #3</Name>
+   <Universe>0</Universe>
+   <Address>48</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Stairville</Manufacturer>
+   <Model>LED Bar 240/8 RGB</Model>
+   <Mode>24-channel</Mode>
+   <ID>3</ID>
+   <Name>LED Bar 240/8 RGB #4</Name>
+   <Universe>0</Universe>
+   <Address>72</Address>
+   <Channels>24</Channels>
+  </Fixture>
+  <Function ID="0" Type="Chaser" Name="Heartbeat Chaser  0 - Faint">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="PerStep" FadeOut="PerStep" Duration="Common"/>
+   <Step Number="0" FadeIn="100" Hold="0" FadeOut="200">1</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">7</Step>
+  </Function>
+  <Function ID="1" Type="Scene" Name="Heartbeat 0 - Faint">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,30,21,31</FixtureVal>
+  </Function>
+  <Function ID="2" Type="Scene" Name="Heartbeat 1 - Weak">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,80,3,80,18,80,21,80</FixtureVal>
+  </Function>
+  <Function ID="3" Type="Scene" Name="Heartbeat 2 - Medium">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,100,3,100,6,100,9,60,12,60,15,100,18,100,21,100</FixtureVal>
+  </Function>
+  <Function ID="4" Type="Scene" Name="Heartbeat 3 - Strong">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,150,3,150,6,150,9,100,12,100,15,150,18,150,21,150</FixtureVal>
+  </Function>
+  <Function ID="5" Type="Scene" Name="Heartbeat 4 - Heavy">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,200,3,200,6,200,9,150,12,150,15,200,18,200,21,200</FixtureVal>
+  </Function>
+  <Function ID="6" Type="Scene" Name="Heartbeat 5 - Intense">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,3,255,6,255,9,255,12,255,15,255,18,255,21,255</FixtureVal>
+  </Function>
+  <Function ID="7" Type="Scene" Name="Heartbeat x - Reds Blackout">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,0,3,0,6,0,9,0,12,0,15,0,18,0,21,0</FixtureVal>
+  </Function>
+  <Function ID="8" Type="Chaser" Name="Heartbeat Chaser 1 - Weak">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="PerStep" FadeOut="PerStep" Duration="Common"/>
+   <Step Number="0" FadeIn="100" Hold="0" FadeOut="200">2</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">7</Step>
+  </Function>
+  <Function ID="9" Type="Chaser" Name="Heartbeat Chaser 2 - Medium">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="PerStep" FadeOut="PerStep" Duration="Common"/>
+   <Step Number="0" FadeIn="100" Hold="0" FadeOut="200">3</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">7</Step>
+  </Function>
+  <Function ID="10" Type="Chaser" Name="Heartbeat Chaser 3 - Strong">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="PerStep" FadeOut="PerStep" Duration="Common"/>
+   <Step Number="0" FadeIn="100" Hold="0" FadeOut="200">4</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">7</Step>
+  </Function>
+  <Function ID="11" Type="Chaser" Name="Heartbeat Chaser 4 - Heavy">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="PerStep" FadeOut="PerStep" Duration="Common"/>
+   <Step Number="0" FadeIn="100" Hold="0" FadeOut="200">5</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">7</Step>
+  </Function>
+  <Function ID="12" Type="Chaser" Name="Heartbeat Chaser 5 - Intense">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="PerStep" FadeOut="PerStep" Duration="Common"/>
+   <Step Number="0" FadeIn="100" Hold="0" FadeOut="200">6</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">7</Step>
+  </Function>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="">
+   <Appearance>
+    <FrameStyle>None</FrameStyle>
+    <ForegroundColor>Default</ForegroundColor>
+    <BackgroundColor>Default</BackgroundColor>
+    <BackgroundImage>None</BackgroundImage>
+    <Font>Default</Font>
+   </Appearance>
+   <Frame Caption="" ID="11">
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <WindowState Visible="True" X="100" Y="175" Width="440" Height="90"/>
+    <AllowChildren>False</AllowChildren>
+    <AllowResize>False</AllowResize>
+    <ShowHeader>False</ShowHeader>
+    <ShowEnableButton>True</ShowEnableButton>
+    <Collapsed>False</Collapsed>
+    <Disabled>False</Disabled>
+    <Button Caption="Heartbeat Chaser  0 - Faint" ID="12" Icon="">
+     <WindowState Visible="True" X="10" Y="10" Width="70" Height="70"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="0"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+     <Input Universe="0" Channel="19627"/>
+    </Button>
+    <Button Caption="Heartbeat Chaser 1 - Weak" ID="13" Icon="">
+     <WindowState Visible="True" X="80" Y="10" Width="70" Height="70"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="8"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+     <Input Universe="0" Channel="13643"/>
+    </Button>
+    <Button Caption="Heartbeat Chaser 2 - Medium" ID="14" Icon="">
+     <WindowState Visible="True" X="150" Y="10" Width="70" Height="70"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="9"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+     <Input Universe="0" Channel="19817"/>
+    </Button>
+    <Button Caption="Heartbeat Chaser 3 - Strong" ID="15" Icon="">
+     <WindowState Visible="True" X="220" Y="10" Width="70" Height="70"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="10"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+     <Input Universe="0" Channel="2558"/>
+    </Button>
+    <Button Caption="Heartbeat Chaser 4 - Heavy" ID="16" Icon="">
+     <WindowState Visible="True" X="290" Y="10" Width="70" Height="70"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="11"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+     <Input Universe="0" Channel="6537"/>
+    </Button>
+    <Button Caption="Heartbeat Chaser 5 - Intense" ID="17" Icon="">
+     <WindowState Visible="True" X="360" Y="10" Width="70" Height="70"/>
+     <Appearance>
+      <FrameStyle>None</FrameStyle>
+      <ForegroundColor>Default</ForegroundColor>
+      <BackgroundColor>Default</BackgroundColor>
+      <BackgroundImage>None</BackgroundImage>
+      <Font>Default</Font>
+     </Appearance>
+     <Function ID="12"/>
+     <Action>Toggle</Action>
+     <Intensity Adjust="False">100</Intensity>
+     <Input Universe="0" Channel="63692"/>
+    </Button>
+   </Frame>
+  </Frame>
+  <Properties>
+   <Size Width="1920" Height="1080"/>
+   <GrandMaster ChannelMode="Intensity" ValueMode="Reduce" SliderMode="Normal"/>
+  </Properties>
+ </VirtualConsole>
+ <SimpleDesk>
+  <Engine/>
+ </SimpleDesk>
+</Workspace>

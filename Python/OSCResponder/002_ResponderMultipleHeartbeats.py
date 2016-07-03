@@ -68,10 +68,29 @@ def heartbeat(add, tags, stuff, source):
 	print "SuperCollider CPU usage: "+str(decoded[7])+" Number of synths: "+str(decoded[3])
 	# scaling CPU values
 	scaled = int(interp(decoded[7],[0.0,40.0],[20,255]))
-	print scaled
-	# sending heartbeat tick to QLC
+	#print decoded[7]
+	# ready the osc message
 	oscmsg = OSC.OSCMessage()
-	oscmsg.setAddress("/heartbeat/on")
+	#determine which heartbeat to send
+	if float(decoded[7]) < 0.8:
+		oscmsg.setAddress("/heartbeat/faint")
+		print "faint"
+	elif decoded[7] < 2.0:
+		oscmsg.setAddress("/heartbeat/weak")
+		print "weak"
+	elif decoded[7] < 7.0:
+		oscmsg.setAddress("/heartbeat/medium")
+		print "medium"
+	elif decoded[7] < 15.0:
+		oscmsg.setAddress("/heartbeat/strong")
+		print "strong"
+	elif decoded[7] < 30.0:
+		oscmsg.setAddress("/heartbeat/heavy")
+		print "heavy"
+	else:
+		oscmsg.setAddress("/heartbeat/intense")
+		print "intense"
+
 	# adding the CPU usage value to the message, this can be mapped later.
 	oscmsg.append(scaled)
 	c.send(oscmsg)
