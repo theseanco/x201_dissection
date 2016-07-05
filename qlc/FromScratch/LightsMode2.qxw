@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Workspace>
-<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="VirtualConsole">
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FunctionManager">
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.10.4</Version>
@@ -149,7 +149,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="100" Y="175" Width="440" Height="90"/>
+    <WindowState Visible="False" X="100" Y="175" Width="440" Height="90"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -157,7 +157,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Heartbeat Chaser  0 - Faint" ID="12" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="10" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -171,7 +171,7 @@
      <Input Universe="0" Channel="19627"/>
     </Button>
     <Button Caption="Heartbeat Chaser 1 - Weak" ID="13" Icon="">
-     <WindowState Visible="True" X="80" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="80" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -185,7 +185,7 @@
      <Input Universe="0" Channel="13643"/>
     </Button>
     <Button Caption="Heartbeat Chaser 2 - Medium" ID="14" Icon="">
-     <WindowState Visible="True" X="150" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="150" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -199,7 +199,7 @@
      <Input Universe="0" Channel="19817"/>
     </Button>
     <Button Caption="Heartbeat Chaser 3 - Strong" ID="15" Icon="">
-     <WindowState Visible="True" X="220" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="220" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -213,7 +213,7 @@
      <Input Universe="0" Channel="2558"/>
     </Button>
     <Button Caption="Heartbeat Chaser 4 - Heavy" ID="16" Icon="">
-     <WindowState Visible="True" X="290" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="290" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -227,7 +227,7 @@
      <Input Universe="0" Channel="6537"/>
     </Button>
     <Button Caption="Heartbeat Chaser 5 - Intense" ID="17" Icon="">
-     <WindowState Visible="True" X="360" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="360" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>

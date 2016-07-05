@@ -26,8 +26,7 @@ class PiException(Exception):
 		return repr(self.value)
 
 ##########################
-#	OSC
-##########################
+#	OSC##########################
 
 # Initialize the OSC server and the client.
 s = OSC.OSCServer(receive_address)
