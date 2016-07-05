@@ -102,20 +102,21 @@ def heartbeat(add, tags, stuff, source):
 def supercollider_envelope_on(add,tags,stuff,source):
 	oscmsg = OSC.OSCMessage()
 	oscmsg.setAddress("/sc_envelope/on")
-	oscmsg.append(stuff)
+	oscmsg.append(1)
 	c.send(oscmsg)
+	print "on"
 
 # detects supercollider envelope offsets
 def supercollider_envelope_off(add,tags,stuff,source):
 	oscmsg = OSC.OSCMessage()
 	oscmsg.setAddress("/sc_envelope/off")
-	oscmsg.append(stuff)
+	oscmsg.append(1)
 	c.send(oscmsg)
+	print "off"
 
 
 # These are coming from SuperCollider
 s.addMsgHandler("/heartbeat/1", heartbeat)
-s.addMsgHandler("/heartbeat/on", heartbeat_lights)
 s.addMsgHandler("/env/on", supercollider_envelope_on)
 s.addMsgHandler("/env/off", supercollider_envelope_off)
 
