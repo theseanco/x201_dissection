@@ -24,7 +24,13 @@ void loop()
 
     Serial.print("msg= ");
     Serial.print(total1);                  // print sensor output 1
+    Serial.print(" ");
+    Serial.print(total1); //change this when more sensors are added
+    Serial.print(" ");
+    Serial.print(total1); //change this when more sensors are added
+    Serial.print(" ");
+    Serial.print(total1); //change this when more sensors are added
     Serial.println(" ");
-
+    
     delay(10);                             // arbitrary delay to limit data to serial port 
 }

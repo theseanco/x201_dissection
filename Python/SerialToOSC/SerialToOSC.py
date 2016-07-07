@@ -49,3 +49,18 @@ while True:
     oscmsg.setAddress("/sensors/1")
     oscmsg.append(int(result[1]))
     c.send(oscmsg)
+
+    oscmsg = OSC.OSCMessage()
+    oscmsg.setAddress("/sensors/2")
+    oscmsg.append(int(result[2]))
+    c.send(oscmsg)
+
+    oscmsg = OSC.OSCMessage()
+    oscmsg.setAddress("/sensors/3")
+    oscmsg.append(int(result[3]))
+    c.send(oscmsg)
+
+    oscmsg = OSC.OSCMessage()
+    oscmsg.setAddress("/sensors/4")
+    oscmsg.append(int(result[4]))
+    c.send(oscmsg)
