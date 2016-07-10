@@ -126,7 +126,24 @@ def sensor_2(add,tags,stuff,source):
 
 # TODO: write functions for remaning 2 switches
 def sensor_3(add, tags, stuff, source):
-	x = 0
+	global sw3
+	if int(stuff[0]) > 2000:
+		if sw3 == 0:
+			sw3 = 1
+			print "SWITCH 3 ON"
+			oscmsg = OSC.OSCMessage()
+			oscmsg.setAddress("/switch/3")
+			oscmsg.append(1)
+			# messages to be sent to processing to trigger stress testing procedures
+			processingclient.send(oscmsg)
+	else:
+		if sw3 == 1:
+			sw3 = 0
+			print "SWITCH 3 OFF"
+			oscmsg = OSC.OSCMessage()
+			oscmsg.setAddress("/switch/3")
+			oscmsg.append(0)
+			processingclient.send(oscmsg)
 
 def sensor_4(add, tags, stuff, source):
 	x = 0
@@ -212,9 +229,17 @@ def inductionmics(add,tags,stuff,source):
 
 # Print information from processing where relevant
 def processingprint(add,tags,stuff,source):
-	# if information switch is on
+	global sw1
+	# if information switch is on, prints anything recieved from Processing
 	if sw1 == 1:
-		print(OSC.decodeOSC(stuff[0]))
+		print(stuff)
+
+# handler for processing sending strobing information
+def processingstrobe(add,tags,stuff,source):
+	global sw1
+	#if information switch is on
+	if sw1 == 1:
+		print("Stress Test: Strobe!")
 
 
 
@@ -231,6 +256,9 @@ s.addMsgHandler("/sensors/4", sensor_4)
 
 # Handler for induction mic data
 s.addMsgHandler("/induction/master", inductionmics)
+
+# Handler for printing processing
+s.addMsgHandler("/processing/printing", processingprint)
 
 
 
