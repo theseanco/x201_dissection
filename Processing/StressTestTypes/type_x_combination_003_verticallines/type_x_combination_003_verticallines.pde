@@ -21,6 +21,8 @@ NetAddress python;
 NetAddress supercollider;
 
 
+//TODO: place these global variables as local ones, globalising all of these is excessive.
+
 
 //TYPE 1 VARIABLES START
 int largo = 1;
@@ -69,9 +71,9 @@ float sb;
 
 //a master counting variable to switch between stress testing procedures
 int mastercount;
-int typeswitch = 1;
-int switchlen = 9000;
-int masterswitch = 0;
+int typeswitch = 2;
+int switchlen = 1000000;
+int masterswitch = 1;
 
 void setup() {
   size(1280, 800);
@@ -82,11 +84,11 @@ void setup() {
 }
 
 void draw() {
-  
-      
-    if (masterswitch != 1) {
-      background(0);
-    }
+
+
+  if (masterswitch != 1) {
+    background(0);
+  }
 
   if (masterswitch == 1) {
     if (typeswitch == 1) {
@@ -123,11 +125,18 @@ void draw() {
 
 //vertical lines
 void type1() {
+
+  //local variable to detect when number of lines changes
+  int prev;
+  prev = int(divisor);
+
+
   for (int x = 0; x < width; x+=largo) 
   {
     for (int y = 0; y < height; y+=largo)
     {
       noStroke();
+      //variables need to be used for colours here so that lines are drawn rather than noise
       fill(map(r, 0, 63, 0, 255), map(g, 0, 63, 0, 255), map(b, 0, 63, 0, 255));
       rect(x, y, largo, largo);
     }
@@ -159,9 +168,16 @@ void type1() {
       divisor = 2;
     }
     count = 0;
+
+    //conditional to only send message when divisor changes
+    if (prev != int(divisor)) {
+      OscMessage verticalMsg = new OscMessage("/processing/verticallines");
+      verticalMsg.add(int(divisor));
+      //send strobe information to Python at the same address but different port
+      oscP5.send(verticalMsg, python);
+      oscP5.send(verticalMsg, supercollider);
+    }
   }
-  
-  println(int(divisor));
 }
 
 
@@ -192,6 +208,13 @@ void type2() {
     vertical = vertical * 2;
     count2 = 0;
     cyclen = cyclen - 20;
+
+    //package and send block information
+    OscMessage blockMsg = new OscMessage("/processing/blocks");
+    blockMsg.add(int(horizontal*vertical));
+    //send strobe information to Python at the same address but different port
+    oscP5.send(blockMsg, python);
+    oscP5.send(blockMsg, supercollider);
   }
 
   if (count2 == cyclen && flip == 1) {
@@ -199,6 +222,13 @@ void type2() {
     vertical = vertical / 2;
     cyclen = cyclen + 20;
     count2 = 0;
+
+    //package and send block information
+    OscMessage blockMsg = new OscMessage("/processing/blocks");
+    blockMsg.add(int(horizontal*vertical));
+    //send strobe information to Python at the same address but different port
+    oscP5.send(blockMsg, python);
+    oscP5.send(blockMsg, supercollider);
   }
 
   if (horizontal == 1024.0) {
@@ -213,6 +243,9 @@ void type2() {
 
 //horizontal lines
 void type3() {
+  int prev;
+  prev = int(divisor3);
+
   for (int x3 = 0; x3 < height; x3+=largo3) 
   {
     for (int y3 = 0; y3 < width; y3+=largo3)
@@ -249,20 +282,31 @@ void type3() {
       divisor3 = 2;
     }
     count3 = 0;
+
+    //horizontal message to be sent on line number change
+    if (prev != int(divisor3)) {
+      OscMessage horizontalMsg = new OscMessage("/processing/horizontallines");
+      horizontalMsg.add(int(divisor3));
+      //send strobe information to Python at the same address but different port
+      oscP5.send(horizontalMsg, python);
+      oscP5.send(horizontalMsg, supercollider);
+    }
   }
 }
 
 //strobing lights
 void type4() {
+
+  //using a variable to determine strobe colours because they will be used later
   sr = map(int(random(63)), 0, 63, 0, 255);
   sg = map(int(random(63)), 0, 63, 0, 255);
   sb = map(int(random(63)), 0, 63, 0, 255);
-  
-  
+
+
   background(0);
 
   if (count4 >= 60 - len) {
-    fill(sr,sg,sb);
+    fill(sr, sg, sb);
     rect(0, 0, 1280, 800);
     count4 = 0;
     //i need an in/out type statement to have this get shorter then longer again
@@ -270,6 +314,7 @@ void type4() {
       lenAmount = -lenAmount;
     };
     len = len + lenAmount;
+    //package all relevant information about strobe colours
     OscMessage strobeMsg = new OscMessage("/processing/strobe");
     strobeMsg.add(int(sr));
     strobeMsg.add(int(sg));
@@ -284,13 +329,13 @@ void type4() {
 //osc event responder, used for switching stress testing on and off
 void oscEvent(OscMessage theOscMessage) {
   if (theOscMessage.get(0).intValue() == 1) {
-   masterswitch = 1; 
-   print("on!");
+    masterswitch = 1; 
+    print("on!");
   };
   if (theOscMessage.get(0).intValue() == 0) {
-   masterswitch = 0; 
-   print("off!");
-   background(0);
+    masterswitch = 0; 
+    print("off!");
+    background(0);
   };
 }
 
@@ -298,8 +343,8 @@ void oscEvent(OscMessage theOscMessage) {
 
 //strobe message sender
 void strobeMsg() {
-    OscMessage strobeMsg = new OscMessage("/processing/strobe");
-    strobeMsg.add(1);
-    //send strobe information to Python at the same address but different port
-    oscP5.send(strobeMsg, python);
+  OscMessage strobeMsg = new OscMessage("/processing/strobe");
+  strobeMsg.add(1);
+  //send strobe information to Python at the same address but different port
+  oscP5.send(strobeMsg, python);
 }

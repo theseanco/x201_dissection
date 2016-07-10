@@ -240,8 +240,26 @@ def processingprint(add,tags,stuff,source):
 def processingstrobe(add,tags,stuff,source):
 	global sw1
 	#if information switch is on
-	print("strobe colour = "+str(stuff[0])+" "+str(stuff[1])+" "+str(stuff[2]))
+	if sw1 == 1:
+		print("strobe colour = "+str(stuff[0])+" "+str(stuff[1])+" "+str(stuff[2]))
 
+# handler for processing sending number of vertical lines drawn
+def processingvertical(add,tags,stuff,source):
+	global sw1
+	if sw1 == 1:
+		print("vertical bands: "+str(stuff[0]))
+
+# handler for processing sending number of horizontal lines drawn
+def processinghorizontal(add,tags,stuff,source):
+	global sw1
+	if sw1 == 1:
+		print("horizontal bands: "+str(stuff[0]))
+
+# handler for processing sending block numbers
+def processingblocks(add,tags,stuff,source):
+	global sw1
+	if sw1 == 1:
+		print("blocks: "+str(stuff[0]))
 
 
 # These are coming from SuperCollider
@@ -261,7 +279,9 @@ s.addMsgHandler("/induction/master", inductionmics)
 # Handler for printing processing
 s.addMsgHandler("/processing/printing", processingprint)
 s.addMsgHandler("/processing/strobe", processingstrobe)
-
+s.addMsgHandler("/processing/verticallines",processingvertical)
+s.addMsgHandler("/processing/horizontallines",processinghorizontal)
+s.addMsgHandler("/processing/blocks",processingblocks)
 
 # just checking which handlers we have added
 print "Registered Callback-functions are :"
