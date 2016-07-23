@@ -157,7 +157,7 @@ def heartbeat(add, tags, stuff, source):
 		# print "HEARTBEAT RECIEVED!"
 		decoded = OSC.decodeOSC(stuff[0])
 		#supercollider CPU usage and UGens printout
-		print "SuperCollider CPU usage: "+str(round(decoded[7],4))+" Number of synths: "+str(decoded[3])
+		print "Sound CPU/Synths heartbeat: "+str(round(decoded[7],4))+"/"+str(decoded[3])
 		# scaling CPU values
 		scaled = int(interp(decoded[7],[0.0,40.0],[20,255]))
 		#print decoded[7]
@@ -166,22 +166,16 @@ def heartbeat(add, tags, stuff, source):
 		#determine which heartbeat to send
 		if float(decoded[7]) < 2.0:
 			oscmsg.setAddress("/heartbeat/faint")
-			print "faint"
 		elif decoded[7] < 6.0:
 			oscmsg.setAddress("/heartbeat/weak")
-			print "weak"
 		elif decoded[7] < 10.0:
 			oscmsg.setAddress("/heartbeat/medium")
-			print "medium"
 		elif decoded[7] < 20.0:
 			oscmsg.setAddress("/heartbeat/strong")
-			print "strong"
 		elif decoded[7] < 30.0:
 			oscmsg.setAddress("/heartbeat/heavy")
-			print "heavy"
 		else:
 			oscmsg.setAddress("/heartbeat/intense")
-			print "intense"
 
 		# adding the CPU usage value to the message, this can be mapped later.
 		oscmsg.append(scaled)

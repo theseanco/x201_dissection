@@ -18,10 +18,10 @@ OSCFunc({|msg| Synth(\strobe,
 (
 SynthDef(
 	\horizontal,
-	{ arg freq = 440, amp = 0.01, fb = 0.5;
+	{ arg freq = 440, amp = 0.01, fb = 1;
 		var sig, env;
 		sig = SinOscFB.ar(freq,SinOsc.kr(rrand(0.01,0.2)).range(fb),amp);
-		env = EnvGen.ar(Env.linen(0.01,0.1,0.4),doneAction:2);
+		env = EnvGen.ar(Env.linen(0.01,0.1,0.01),doneAction:2);
 		sig = sig * env;
 		Out.ar(0,Pan2.ar(sig))
 }).add;
@@ -39,7 +39,9 @@ SynthDef(
 }).add;
 )
 
-Task({720.do({|i|Synth(\horizontal,[\freq,i*10]);0.001.wait;})}).start
+OSCFunc({|msg| Task({msg[1].do({|i, f = 100|Synth(\horizontal,[\freq,(f+((i*40)))%2000]);msg[1].linlin(1,720,0.01,0.025).wait;})}).start},'/processing/horizontallines');
+
+720*0.02
 
 Task({64400.do({|i|Synth(\block,[\freq,(i*10)%10000]);0.0001.wait;})}).start
 
