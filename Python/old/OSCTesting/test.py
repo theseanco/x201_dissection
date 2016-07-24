@@ -8,18 +8,20 @@ import random
 
 # setup OSC communication
 c = OSC.OSCClient()
-c.connect(('127.0.0.1', 57120))
+c.connect(('127.0.0.1', 7700))
 oscmsg = OSC.OSCMessage()
+
+address = "/character/number"
 
 while True:
     myrand = random.random()
     oscmsg = OSC.OSCMessage()
-    oscmsg.setAddress("/testing")
+    oscmsg.setAddress(address)
     oscmsg.append(myrand)
     c.send(oscmsg)
 
     oscmsg = OSC.OSCMessage()
-    oscmsg.setAddress("/testing")
+    oscmsg.setAddress(address)
     oscmsg.append(str(myrand))
     c.send(oscmsg)
 
