@@ -10,9 +10,7 @@
   <InputOutputMap>
    <Universe Name="Universe 1" ID="0" Passthrough="False">
     <Input Plugin="OSC" Line="0" Profile="None"/>
-    <Output Plugin="DMX USB" Line="0">
-     <PluginParameters UniverseChannels="96"/>
-    </Output>
+    <Output Plugin="DMX USB" Line="0"/>
    </Universe>
    <Universe Name="Universe 2" ID="1" Passthrough="False"/>
    <Universe Name="Universe 3" ID="2" Passthrough="False"/>

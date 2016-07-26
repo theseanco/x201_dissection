@@ -244,4 +244,18 @@ SynthDef(
 		Out.ar(0,Pan2.ar(sig));
 }).add;
 OSCFunc({|msg| Task({|i|msg[1].do({Synth(\block,[\freq,rrand(100,10000),\amp,msg[1].linlin(8,1024,0.5,0.2)]);msg[1].linlin(8,1024,0.01,0.005).wait;})}).start;},'/processing/horizontalblocks');
+
+//Sonification of code reading
+SynthDef(\character,
+	{ arg freq = 1000, amp = 0.1, out = 0, atk = 0.01, rel = 0.06;
+		var sig,env;
+		sig = Mix.ar(SinOsc.ar([freq*1.001,freq*0.999,freq*1.002,freq*0.998],0,amp));
+		env = EnvGen.ar(Env.perc(atk,rel),1,1,0,1,2);
+		sig = sig * env;
+		Out.ar(out,Pan2.ar(sig));
+}).add;
+OSCFunc({|msg| Synth(\character,[\freq,200])},'/character/number');
+OSCFunc({|msg| Synth(\character,[\freq,2000])},'/character/letter');
+OSCFunc({|msg| Synth(\character,[\atk,0.15,\rel,0.15,\freq,4000])},'/character/linebreak');
+OSCFunc({|msg| Synth(\character,[\atk,0.15,\rel,0.15,\freq,100])},'/character/symbol');
 )

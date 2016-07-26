@@ -73,7 +73,7 @@ float sb;
 int mastercount;
 int typeswitch = 2;
 int switchlen = 100;
-int masterswitch = 1;
+int masterswitch = 0;
 
 void setup() {
   size(1280, 800);
