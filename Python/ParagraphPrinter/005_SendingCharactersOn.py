@@ -158,12 +158,12 @@ def OSCPrintScript(add, tags, stuff, source):
     if stuff[0] == 1:
         sw4 = 1
         #if the switch is on, print four characters, this can be used to scroll through entire code
-        for i in range(4):
+        for i in range(2):
             scriptPrint()
             # this is inefficient, but it does work
             #TODO: application threading to see if i can push this across multiple threads
             # to check variable WHILE running for loop
-            time.sleep(0.025)
+            time.sleep(0.02)
     if stuff[0] == 0:
         if sw4 == 1:
             # when the switch changes state, grab new code and print line breaks

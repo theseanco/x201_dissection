@@ -55,6 +55,7 @@ OSCFunc({|msg|
 
 //heartbeat code with new synth and switching added
 (
+s.boot;
 ~python = NetAddr("127.0.0.1", 9999);
 ~qlc = NetAddr("127.0.0.1",7700);
 (
@@ -107,6 +108,7 @@ OSCFunc({|msg|
 
 //combined with induction code AND SONIFICATION CODE
 (
+s.boot;
 ~python = NetAddr("127.0.0.1", 9999);
 ~qlc = NetAddr("127.0.0.1",7700);
 (
@@ -259,3 +261,6 @@ OSCFunc({|msg| Synth(\character,[\freq,2000])},'/character/letter');
 OSCFunc({|msg| Synth(\character,[\atk,0.15,\rel,0.15,\freq,4000])},'/character/linebreak');
 OSCFunc({|msg| Synth(\character,[\atk,0.15,\rel,0.15,\freq,100])},'/character/symbol');
 )
+
+
+OSCFunc.trace
