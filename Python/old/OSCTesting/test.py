@@ -11,18 +11,12 @@ c = OSC.OSCClient()
 c.connect(('127.0.0.1', 7700))
 oscmsg = OSC.OSCMessage()
 
-address = "/character/number"
+address = "/switch/4/on"
 
 while True:
-    myrand = random.random()
     oscmsg = OSC.OSCMessage()
     oscmsg.setAddress(address)
-    oscmsg.append(myrand)
-    c.send(oscmsg)
-
-    oscmsg = OSC.OSCMessage()
-    oscmsg.setAddress(address)
-    oscmsg.append(str(myrand))
+    oscmsg.append(1)
     c.send(oscmsg)
 
     sleep(1)

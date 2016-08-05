@@ -16,8 +16,9 @@ the basic structures of that file to implement a very simple bi-directional comm
 # TODO: Format other code to be printed by paragraph
 # TODO: ask tom about conditional statements for the letter printer: How can I print when it is on, and not print when it is OFF
 # TODO: using the format /switch/x/on show light 'blooming' when switches triggered
+# TODO: use overall CPU usage rather than CPU usage from SuperCollider?
 
-import socket, OSC, re, time, threading, math, struct, random, os
+import socket, OSC, re, time, threading, math, struct, random, os, psutil
 from numpy import interp
 
 # Declaring OSC addresses
@@ -190,32 +191,33 @@ def sensor_4(add, tags, stuff, source):
 # OSC messages are recieved by QLC+
 def heartbeat(add, tags, stuff, source):
 	global sw1
+	cpu = psutil.cpu_percent()
 	if sw1 == 1:
 		# print "HEARTBEAT RECIEVED!"
 		decoded = OSC.decodeOSC(stuff[0])
 		#supercollider CPU usage and UGens printout
-		print "Sound CPU/Synths heartbeat: "+str(round(decoded[7],4))+"/"+str(decoded[3])
+		print "CPU %/Number of Sounds: "+str(cpu)+"/"+str(decoded[3])
 		# scaling CPU values
-		scaled = int(interp(decoded[7],[0.0,40.0],[20,255]))
+		cpufloat = float(cpu)
 		#print decoded[7]
 		# ready the osc message
 		oscmsg = OSC.OSCMessage()
 		#determine which heartbeat to send
-		if float(decoded[7]) < 2.0:
+		if cpufloat < 2.0:
 			oscmsg.setAddress("/heartbeat/faint")
-		elif decoded[7] < 6.0:
+		elif cpufloat < 6.0:
 			oscmsg.setAddress("/heartbeat/weak")
-		elif decoded[7] < 10.0:
+		elif cpufloat < 10.0:
 			oscmsg.setAddress("/heartbeat/medium")
-		elif decoded[7] < 20.0:
+		elif cpufloat < 20.0:
 			oscmsg.setAddress("/heartbeat/strong")
-		elif decoded[7] < 30.0:
+		elif cpufloat < 30.0:
 			oscmsg.setAddress("/heartbeat/heavy")
 		else:
 			oscmsg.setAddress("/heartbeat/intense")
 
 		# adding the CPU usage value to the message, this can be mapped later.
-		oscmsg.append(scaled)
+		oscmsg.append(cpufloat)
 		qlcclient.send(oscmsg)
 		#send message to QLC here. Note that decoded is now a list an i can Use
 		# things within it to control stuff in QLC
