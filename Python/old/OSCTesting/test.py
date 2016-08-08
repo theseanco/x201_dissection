@@ -11,7 +11,7 @@ c = OSC.OSCClient()
 c.connect(('127.0.0.1', 7700))
 oscmsg = OSC.OSCMessage()
 
-address = "/switch/4/on"
+address = "/lights/vertical"
 
 while True:
     oscmsg = OSC.OSCMessage()
