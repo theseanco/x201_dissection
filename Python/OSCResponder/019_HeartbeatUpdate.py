@@ -221,6 +221,11 @@ def heartbeat(add, tags, stuff, source):
 		# adding the CPU usage value to the message, this can be mapped later.
 		oscmsg.append(cpufloat)
 		qlcclient.send(oscmsg)
+		# sending CPU information back to SuperCollider
+		oscmsg = OSC.OSCMessage()
+		oscmsg.setAddress("/cpuinfo")
+		oscmsg.append(cpufloat)
+		scclient.send(oscmsg)
 		#send message to QLC here. Note that decoded is now a list an i can Use
 		# things within it to control stuff in QLC
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Workspace>
-<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="VirtualConsole">
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FunctionManager">
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.10.3a</Version>
@@ -10,9 +10,7 @@
   <InputOutputMap>
    <Universe Name="Universe 1" ID="0" Passthrough="False">
     <Input Plugin="OSC" Line="0" Profile="None"/>
-    <Output Plugin="DMX USB" Line="0">
-     <PluginParameters UniverseChannels="96"/>
-    </Output>
+    <Output Plugin="DMX USB" Line="0"/>
    </Universe>
    <Universe Name="Universe 2" ID="1" Passthrough="False"/>
    <Universe Name="Universe 3" ID="2" Passthrough="False"/>
@@ -69,31 +67,31 @@
    <Step Number="0" FadeIn="100" Hold="0" FadeOut="200">1</Step>
    <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">7</Step>
   </Function>
-  <Function ID="1" Type="Scene" Name="Heartbeat 0 - Faint" Path="Heartbeat Scenes">
+  <Function ID="1" Type="Scene" Name="Heartbeat 0 - Faint" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="0">0,20,21,20</FixtureVal>
   </Function>
-  <Function ID="2" Type="Scene" Name="Heartbeat 1 - Weak" Path="Heartbeat Scenes">
+  <Function ID="2" Type="Scene" Name="Heartbeat 1 - Weak" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="0">0,80,3,30,18,30,21,80</FixtureVal>
   </Function>
-  <Function ID="3" Type="Scene" Name="Heartbeat 2 - Medium" Path="Heartbeat Scenes">
+  <Function ID="3" Type="Scene" Name="Heartbeat 2 - Medium" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="0">0,100,3,80,6,30,9,5,12,5,15,30,18,80,21,100</FixtureVal>
   </Function>
-  <Function ID="4" Type="Scene" Name="Heartbeat 3 - Strong" Path="Heartbeat Scenes">
+  <Function ID="4" Type="Scene" Name="Heartbeat 3 - Strong" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="0">0,150,3,100,6,80,9,50,12,50,15,80,18,100,21,150</FixtureVal>
   </Function>
-  <Function ID="5" Type="Scene" Name="Heartbeat 4 - Heavy" Path="Heartbeat Scenes">
+  <Function ID="5" Type="Scene" Name="Heartbeat 4 - Heavy" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="0">0,200,3,150,6,120,9,100,12,100,15,120,18,150,21,200</FixtureVal>
   </Function>
-  <Function ID="6" Type="Scene" Name="Heartbeat 5 - Intense" Path="Heartbeat Scenes">
+  <Function ID="6" Type="Scene" Name="Heartbeat 5 - Intense" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="0">0,0,3,0,6,0,9,0,12,0,15,0,18,0,21,0</FixtureVal>
   </Function>
-  <Function ID="7" Type="Scene" Name="Heartbeat x - Reds Blackout" Path="Heartbeat Scenes">
+  <Function ID="7" Type="Scene" Name="Heartbeat x - Reds Blackout" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="0">0,0,3,0,6,0,9,0,12,0,15,0,18,0,21,0</FixtureVal>
   </Function>
@@ -194,7 +192,7 @@
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="2">6,0,7,70,8,30,9,0,10,60,11,25</FixtureVal>
   </Function>
-  <Function ID="22" Type="Scene" Name="All Zero" Path="Heartbeat Scenes">
+  <Function ID="22" Type="Scene" Name="All Zero" Path="Code Printing Scenes/Heartbeat Scenes">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
    <FixtureVal ID="2">0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0</FixtureVal>
   </Function>
@@ -306,6 +304,212 @@
    <Step Number="0" FadeIn="0" Hold="110" FadeOut="900">41</Step>
    <Step Number="1" FadeIn="900" Hold="100" FadeOut="0">40</Step>
   </Function>
+  <Function ID="43" Type="Scene" Name="Stress Test Strobe On" Path="Stress Test Scenes/Strobing">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,0,1,0,2,15,3,0,4,39,5,85,6,0,7,104,8,155,9,151,10,255,11,255,12,151,13,255,14,255,15,0,16,112,17,155,18,0,19,31,20,85,21,0,22,0,23,19</FixtureVal>
+  </Function>
+  <Function ID="44" Type="Scene" Name="Stress Test Strobe Off" Path="Stress Test Scenes/Strobing">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0</FixtureVal>
+  </Function>
+  <Function ID="45" Type="Chaser" Name="Stress Test Strobe" Path="Stress Test Chaser">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="PerStep" FadeOut="PerStep" Duration="PerStep"/>
+   <Step Number="0" FadeIn="0" Hold="60" FadeOut="150">43</Step>
+   <Step Number="1" FadeIn="150" Hold="10" FadeOut="0">44</Step>
+  </Function>
+  <Function ID="46" Type="Scene" Name="Block 1 on">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">3,160,5,160</FixtureVal>
+  </Function>
+  <Function ID="47" Type="Scene" Name="Block 1 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">3,0,5,0</FixtureVal>
+  </Function>
+  <Function ID="48" Type="Scene" Name="Block 2 on">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">12,160,13,160</FixtureVal>
+  </Function>
+  <Function ID="49" Type="Scene" Name="Block 2 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">12,0,13,0</FixtureVal>
+  </Function>
+  <Function ID="50" Type="Scene" Name="Block 3 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">21,5,22,160,23,10</FixtureVal>
+  </Function>
+  <Function ID="51" Type="Scene" Name="Block 3 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">21,0,22,0,23,0</FixtureVal>
+  </Function>
+  <Function ID="52" Type="Scene" Name="Block 4 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,20,1,50,2,160</FixtureVal>
+  </Function>
+  <Function ID="53" Type="Scene" Name="Block 4 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="4294967295"/>
+  </Function>
+  <Function ID="54" Type="Scene" Name="Block 5 On" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">19,160</FixtureVal>
+  </Function>
+  <Function ID="55" Type="Scene" Name="Block 5 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">19,0</FixtureVal>
+  </Function>
+  <Function ID="56" Type="Scene" Name="Block 6 On" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">6,80,8,160</FixtureVal>
+  </Function>
+  <Function ID="57" Type="Scene" Name="Block 6 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">6,0,7,0,8,0</FixtureVal>
+  </Function>
+  <Function ID="58" Type="Scene" Name="Block 7 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">15,160,16,160,17,20</FixtureVal>
+  </Function>
+  <Function ID="59" Type="Scene" Name="Block 7 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">15,0,16,0,17,0</FixtureVal>
+  </Function>
+  <Function ID="60" Type="Scene" Name="Block 8 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">10,30,11,160</FixtureVal>
+  </Function>
+  <Function ID="61" Type="Scene" Name="Block 8 off" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">9,0,10,0,11,0</FixtureVal>
+  </Function>
+  <Function ID="62" Type="Chaser" Name="Boxes Chaser" Path="Stress Test Chaser">
+   <Speed FadeIn="0" FadeOut="0" Duration="50"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="70" FadeOut="0">46</Step>
+   <Step Number="1" FadeIn="0" Hold="70" FadeOut="0">48</Step>
+   <Step Number="2" FadeIn="0" Hold="0" FadeOut="0">50</Step>
+   <Step Number="3" FadeIn="0" Hold="0" FadeOut="0">52</Step>
+   <Step Number="4" FadeIn="0" Hold="0" FadeOut="0">54</Step>
+   <Step Number="5" FadeIn="0" Hold="0" FadeOut="0">56</Step>
+   <Step Number="6" FadeIn="0" Hold="0" FadeOut="0">58</Step>
+   <Step Number="7" FadeIn="0" Hold="0" FadeOut="0">60</Step>
+   <Step Number="8" FadeIn="0" Hold="50" FadeOut="0">64</Step>
+   <Step Number="9" FadeIn="0" Hold="50" FadeOut="0">65</Step>
+   <Step Number="10" FadeIn="0" Hold="50" FadeOut="0">66</Step>
+   <Step Number="11" FadeIn="0" Hold="50" FadeOut="0">63</Step>
+  </Function>
+  <Function ID="63" Type="Scene" Name="block 9 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">9,96,10,150</FixtureVal>
+  </Function>
+  <Function ID="64" Type="Scene" Name="block 10 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,20,1,160,2,80</FixtureVal>
+  </Function>
+  <Function ID="65" Type="Scene" Name="block 11 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">23,160</FixtureVal>
+  </Function>
+  <Function ID="66" Type="Scene" Name="Block 12 on" Path="Stress Test Scenes/Blocks On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">15,100,16,160,17,100</FixtureVal>
+  </Function>
+  <Function ID="67" Type="Scene" Name="Horizontal 1" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,180,1,180,2,180</FixtureVal>
+  </Function>
+  <Function ID="68" Type="Scene" Name="Horizontal 4" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">9,180,10,180,11,180</FixtureVal>
+  </Function>
+  <Function ID="69" Type="Scene" Name="Horizontal 3" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">6,180,7,180,8,180</FixtureVal>
+  </Function>
+  <Function ID="70" Type="Scene" Name="Horizontal 7" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">18,180,19,180,20,180</FixtureVal>
+  </Function>
+  <Function ID="71" Type="Scene" Name="Horizontal 2" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">3,180,4,180,5,180</FixtureVal>
+  </Function>
+  <Function ID="72" Type="Scene" Name="Horizontal 6" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">15,180,16,180,17,180</FixtureVal>
+  </Function>
+  <Function ID="73" Type="Scene" Name="Horizontal 5" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">12,180,13,180,14,180</FixtureVal>
+  </Function>
+  <Function ID="74" Type="Scene" Name="Horizontal 8" Path="Stress Test Scenes/Horizontal Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">21,180,22,180,23,180</FixtureVal>
+  </Function>
+  <Function ID="75" Type="Chaser" Name="Horizontal Line Chaser" Path="Stress Test Chaser">
+   <Speed FadeIn="100" FadeOut="1000" Duration="100"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="100" Hold="0" FadeOut="400">67</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">71</Step>
+   <Step Number="2" FadeIn="0" Hold="0" FadeOut="0">69</Step>
+   <Step Number="3" FadeIn="0" Hold="0" FadeOut="0">68</Step>
+   <Step Number="4" FadeIn="0" Hold="0" FadeOut="0">73</Step>
+   <Step Number="5" FadeIn="0" Hold="0" FadeOut="0">72</Step>
+   <Step Number="6" FadeIn="0" Hold="0" FadeOut="0">70</Step>
+   <Step Number="7" FadeIn="0" Hold="0" FadeOut="0">74</Step>
+  </Function>
+  <Function ID="76" Type="Scene" Name="stage 1" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,180,1,180,21,180,22,180</FixtureVal>
+  </Function>
+  <Function ID="77" Type="Scene" Name="stage 2" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">3,180,4,180,18,180,19,180</FixtureVal>
+  </Function>
+  <Function ID="78" Type="Scene" Name="Stage 3" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">6,180,7,180,15,180,16,180</FixtureVal>
+  </Function>
+  <Function ID="79" Type="Scene" Name="Stage 4" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">9,180,10,180,12,180,13,180</FixtureVal>
+  </Function>
+  <Function ID="80" Type="Scene" Name="Stage 5" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">9,180,11,180,12,180,14,180</FixtureVal>
+  </Function>
+  <Function ID="81" Type="Scene" Name="Stage 6" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">6,180,8,180,15,180,17,180</FixtureVal>
+  </Function>
+  <Function ID="82" Type="Scene" Name="Stage 7" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">3,180,5,180,18,180,20,180</FixtureVal>
+  </Function>
+  <Function ID="83" Type="Scene" Name="Stage 8" Path="Stress Test Scenes/Vertical Lines On">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,180,2,180,21,180,23,180</FixtureVal>
+  </Function>
+  <Function ID="84" Type="Chaser" Name="Vertical Line Chaser" Path="Stress Test Chaser">
+   <Speed FadeIn="100" FadeOut="300" Duration="100"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0">76</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">77</Step>
+   <Step Number="2" FadeIn="0" Hold="0" FadeOut="0">78</Step>
+   <Step Number="3" FadeIn="0" Hold="200" FadeOut="0">79</Step>
+   <Step Number="4" FadeIn="0" Hold="0" FadeOut="0">80</Step>
+   <Step Number="5" FadeIn="0" Hold="0" FadeOut="0">81</Step>
+   <Step Number="6" FadeIn="0" Hold="0" FadeOut="0">82</Step>
+   <Step Number="7" FadeIn="0" Hold="0" FadeOut="0">83</Step>
+  </Function>
  </Engine>
  <VirtualConsole>
   <Frame Caption="">
@@ -324,7 +528,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="100" Y="175" Width="440" Height="90"/>
+    <WindowState Visible="False" X="100" Y="175" Width="440" Height="90"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -332,7 +536,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Heartbeat Chaser  0 - Faint" ID="12" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="10" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -346,7 +550,7 @@
      <Input Universe="0" Channel="19627"/>
     </Button>
     <Button Caption="Heartbeat Chaser 1 - Weak" ID="13" Icon="">
-     <WindowState Visible="True" X="80" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="80" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -360,7 +564,7 @@
      <Input Universe="0" Channel="13643"/>
     </Button>
     <Button Caption="Heartbeat Chaser 2 - Medium" ID="14" Icon="">
-     <WindowState Visible="True" X="150" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="150" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -374,7 +578,7 @@
      <Input Universe="0" Channel="19817"/>
     </Button>
     <Button Caption="Heartbeat Chaser 3 - Strong" ID="15" Icon="">
-     <WindowState Visible="True" X="220" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="220" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -388,7 +592,7 @@
      <Input Universe="0" Channel="2558"/>
     </Button>
     <Button Caption="Heartbeat Chaser 4 - Heavy" ID="16" Icon="">
-     <WindowState Visible="True" X="290" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="290" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -402,7 +606,7 @@
      <Input Universe="0" Channel="6537"/>
     </Button>
     <Button Caption="Heartbeat Chaser 5 - Intense" ID="17" Icon="">
-     <WindowState Visible="True" X="360" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="360" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -424,7 +628,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="100" Y="280" Width="140" Height="80"/>
+    <WindowState Visible="False" X="100" Y="280" Width="140" Height="80"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -432,7 +636,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Envelope Off Animation" ID="2" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="60" Height="60"/>
+     <WindowState Visible="False" X="10" Y="10" Width="60" Height="60"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -446,7 +650,7 @@
      <Input Universe="0" Channel="44886"/>
     </Button>
     <Button Caption="Envelope On Animation" ID="3" Icon="">
-     <WindowState Visible="True" X="70" Y="10" Width="60" Height="60"/>
+     <WindowState Visible="False" X="70" Y="10" Width="60" Height="60"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -461,7 +665,7 @@
     </Button>
    </Frame>
    <Button Caption="Light 1 glow animation" ID="4" Icon="">
-    <WindowState Visible="True" X="275" Y="305" Width="50" Height="50"/>
+    <WindowState Visible="False" X="275" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -482,7 +686,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="830" Y="295" Width="200" Height="120"/>
+    <WindowState Visible="False" X="830" Y="295" Width="200" Height="120"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -490,7 +694,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Slider Caption="Slider 5" ID="5" WidgetStyle="Slider" InvertedAppearance="false">
-     <WindowState Visible="True" X="5" Y="0" Width="60" Height="100"/>
+     <WindowState Visible="False" X="5" Y="0" Width="60" Height="100"/>
      <Appearance>
       <FrameStyle>Sunken</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -515,7 +719,7 @@
      </Playback>
     </Slider>
     <Slider Caption="Slider 6" ID="6" WidgetStyle="Slider" InvertedAppearance="false">
-     <WindowState Visible="True" X="70" Y="0" Width="60" Height="100"/>
+     <WindowState Visible="False" X="70" Y="0" Width="60" Height="100"/>
      <Appearance>
       <FrameStyle>Sunken</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -540,7 +744,7 @@
      </Playback>
     </Slider>
     <Slider Caption="Slider 7" ID="7" WidgetStyle="Slider" InvertedAppearance="false">
-     <WindowState Visible="True" X="140" Y="0" Width="60" Height="100"/>
+     <WindowState Visible="False" X="140" Y="0" Width="60" Height="100"/>
      <Appearance>
       <FrameStyle>Sunken</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -573,7 +777,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="100" Y="480" Width="340" Height="100"/>
+    <WindowState Visible="False" X="100" Y="480" Width="340" Height="100"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -581,7 +785,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Letter Chaser" ID="9" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="10" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -595,7 +799,7 @@
      <Input Universe="0" Channel="27297"/>
     </Button>
     <Button Caption="Number Chaser" ID="10" Icon="">
-     <WindowState Visible="True" X="85" Y="5" Width="80" Height="80"/>
+     <WindowState Visible="False" X="85" Y="5" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -609,7 +813,7 @@
      <Input Universe="0" Channel="48953"/>
     </Button>
     <Button Caption="Symbol Chaser" ID="18" Icon="">
-     <WindowState Visible="True" X="170" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="170" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -623,7 +827,7 @@
      <Input Universe="0" Channel="48105"/>
     </Button>
     <Button Caption="Line Break Chaser" ID="19" Icon="">
-     <WindowState Visible="True" X="250" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="250" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -638,7 +842,7 @@
     </Button>
    </Frame>
    <Button Caption="Light 2 glow animation" ID="20" Icon="">
-    <WindowState Visible="True" X="1570" Y="175" Width="50" Height="50"/>
+    <WindowState Visible="False" X="330" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -652,7 +856,7 @@
     <Input Universe="0" Channel="50482"/>
    </Button>
    <Button Caption="light 3 glow" ID="21" Icon="">
-    <WindowState Visible="True" X="1630" Y="175" Width="50" Height="50"/>
+    <WindowState Visible="False" X="385" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -666,7 +870,7 @@
     <Input Universe="0" Channel="55689"/>
    </Button>
    <Button Caption="Light 4 glow" ID="22" Icon="">
-    <WindowState Visible="True" X="1690" Y="165" Width="50" Height="50"/>
+    <WindowState Visible="False" X="440" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>

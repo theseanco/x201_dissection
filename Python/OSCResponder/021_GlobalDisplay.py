@@ -15,11 +15,11 @@ the basic structures of that file to implement a very simple bi-directional comm
 # TODO: Switch de-bouncing
 # TODO: Format other code to be printed by paragraph
 # TODO: ask tom about conditional statements for the letter printer: How can I print when it is on, and not print when it is OFF
-# TODO: using the format /switch/x/on show light 'blooming' when switches triggered
-# TODO: use overall CPU usage rather than CPU usage from SuperCollider?
+# TODO: Come up with appropriate names for each switch and label them when the switch is on - i.e. INFORMATION DISPLAY ON, ELECTROMAGNETIC SOUND ON.
 
-import socket, OSC, re, time, threading, math, struct, random, os, psutil
+import socket, OSC, re, time, threading, math, struct, random, os, psutil, sys
 from numpy import interp
+from termcolor import colored, cprint
 
 # Declaring OSC addresses
 receive_address = '127.0.0.1', 9999 #Mac Adress, Outgoing Port
@@ -83,15 +83,17 @@ def sensor_1(add,tags,stuff,source):
 	if int(stuff[0]) == swsens:
 		if sw1 == 0:
 			sw1 = 1
-			print "SWITCH 1 ON"
+			cprint("Information Display On!",'green',attrs=['bold','underline'])
+			cprint("SWITCH 1 ON",'green',attrs=['underline'])
 			oscmsg = OSC.OSCMessage()
 			oscmsg.setAddress("/switch/1")
 			oscmsg.append(1)
 			scclient.send(oscmsg)
 	else:
 		if sw1 == 1:
+			cprint("Information Display Off!",'red',attrs=['bold','underline'])
 			sw1 = 0
-			print "SWITCH 1 OFF"
+			cprint("SWITCH 1 OFF",'red',attrs=['underline'])
 			oscmsg = OSC.OSCMessage()
 			oscmsg.setAddress("/switch/1")
 			oscmsg.append(0)
@@ -104,9 +106,10 @@ def sensor_2(add,tags,stuff,source):
 	# a bit of threshold logic to prevent messages being sent repeatedly
 	if int(stuff[0]) == swsens:
 		if sw2 == 0:
+			cprint("Electromagnetic Sound On!",'green',attrs=['bold','underline'])
 			sw2 = 1
 			if sw1 == 1:
-				print "SWITCH 2 ON"
+				cprint("SWITCH 2 ON",'green',attrs=['underline'])
 			oscmsg = OSC.OSCMessage()
 			oscmsg.setAddress("/switch/2")
 			oscmsg.append(1)
@@ -118,9 +121,10 @@ def sensor_2(add,tags,stuff,source):
 			qlcclient.send(oscmsg)
 	else:
 		if sw2 == 1:
+			cprint("Electromagnetic Sound Off!",'red',attrs=['bold','underline'])
 			sw2 = 0
 			if sw1 == 1:
-				print "SWITCH 2 OFF"
+				cprint("SWITCH 2 OFF",'red',attrs=['underline'])
 			oscmsg = OSC.OSCMessage()
 			oscmsg.setAddress("/switch/2")
 			oscmsg.append(0)
@@ -131,9 +135,10 @@ def sensor_3(add, tags, stuff, source):
 	global sw1
 	if int(stuff[0]) == swsens:
 		if sw3 == 0:
+			cprint("Display Testing On!",'green',attrs=['bold','underline'])
 			sw3 = 1
 			if sw1 == 1:
-				print "SWITCH 3 ON"
+				cprint("SWITCH 3 ON",'green',attrs=['underline'])
 			oscmsg = OSC.OSCMessage()
 			oscmsg.setAddress("/switch/3")
 			oscmsg.append(1)
@@ -147,9 +152,10 @@ def sensor_3(add, tags, stuff, source):
 			qlcclient.send(oscmsg)
 	else:
 		if sw3 == 1:
+			cprint("Display Testing Off!",'red',attrs=['bold','underline'])
 			sw3 = 0
 			if sw1 == 1:
-				print "SWITCH 3 OFF"
+				cprint("SWITCH 3 OFF",'red',attrs=['underline'])
 			oscmsg = OSC.OSCMessage()
 			oscmsg.setAddress("/switch/3")
 			oscmsg.append(0)
@@ -164,9 +170,10 @@ def sensor_4(add, tags, stuff, source):
 	global scriptprint
 	if int(stuff[0]) == swsens:
 		if sw4 == 0:
+			cprint("Code Display On!",'green',attrs=['bold','underline'])
 			sw4 = 1
 			if sw1 == 1:
-				print "SWITCH 4 ON"
+				cprint("SWITCH 4 ON",'green',attrs=['underline'])
 			# Send glow message to QLC
 			oscmsg = OSC.OSCMessage()
 			# moved to light 3 due to light fixture requirements
@@ -180,9 +187,10 @@ def sensor_4(add, tags, stuff, source):
 				pythonclient.send(oscmsg)
 	else:
 		if sw4 == 1:
+			cprint("Code Display Off!",'red',attrs=['bold','underline'])
 			sw4 = 0
 			if sw1 == 1:
-				print "SWITCH 4 OFF"
+				cprint("SWITCH 4 OFF",'red',attrs=['underline'])
 			oscmsg = OSC.OSCMessage()
 			oscmsg.setAddress("/switch/printing")
 			oscmsg.append(0)
@@ -198,7 +206,7 @@ def heartbeat(add, tags, stuff, source):
 		# print "HEARTBEAT RECIEVED!"
 		decoded = OSC.decodeOSC(stuff[0])
 		#supercollider CPU usage and UGens printout
-		print "CPU %/Number of Sounds: "+str(cpu)+"/"+str(decoded[3])
+		cprint("CPU %/Number of Sounds: "+str(cpu)+"/"+str(decoded[3]),'red',attrs=['dark'])
 		# scaling CPU values
 		cpufloat = float(cpu)
 		#print decoded[7]
@@ -221,6 +229,11 @@ def heartbeat(add, tags, stuff, source):
 		# adding the CPU usage value to the message, this can be mapped later.
 		oscmsg.append(cpufloat)
 		qlcclient.send(oscmsg)
+		# sending CPU information back to SuperCollider
+		oscmsg = OSC.OSCMessage()
+		oscmsg.setAddress("/cpuinfo")
+		oscmsg.append(cpufloat)
+		scclient.send(oscmsg)
 		#send message to QLC here. Note that decoded is now a list an i can Use
 		# things within it to control stuff in QLC
 
@@ -260,7 +273,7 @@ def inductionmics(add,tags,stuff,source):
 			decoded = OSC.decodeOSC(stuff[0])
 			#TODO: Sort this out. Print this every ten times this function is run
 			if inductioniter % 30 == 0:
-				print "Induction Power: Low - "+str(round(decoded[4],3))+" Mid - "+str(round(decoded[5],3))+" Hi - "+str(round(decoded[6],3))
+				cprint("Induction Power: Low - "+str(round(decoded[4],3))+" Mid - "+str(round(decoded[5],3))+" Hi - "+str(round(decoded[6],3)),'cyan',attrs=['dark'])
 			inductioniter = inductioniter + 1
 
 # Print information from processing where relevant
@@ -275,45 +288,45 @@ def processingstrobe(add,tags,stuff,source):
 	global sw1
 	#if information switch is on
 	if sw1 == 1:
-		print("strobe colour = "+str(stuff[0])+" "+str(stuff[1])+" "+str(stuff[2]))
+		cprint("strobe colour = "+str(stuff[0])+" "+str(stuff[1])+" "+str(stuff[2]),'yellow')
 
 # handler for processing sending number of vertical lines drawn
 def processingvertical(add,tags,stuff,source):
 	global sw1
 	if sw1 == 1:
-		print("vertical bands: "+str(stuff[0]))
+		cprint("vertical bands: "+str(stuff[0]),'yellow')
 
 # handler for processing sending number of horizontal lines drawn
 def processinghorizontal(add,tags,stuff,source):
 	global sw1
 	if sw1 == 1:
-		print("horizontal bands: "+str(stuff[0]))
+		cprint("horizontal bands: "+str(stuff[0]),'yellow')
 
 # handler for processing sending block numbers
 def processingblocks(add,tags,stuff,source):
 	global sw1
 	if sw1 == 1:
-		print("blocks: "+str(stuff[0]))
+		cprint("blocks: "+str(stuff[0]),'yellow')
 
 def printLetter(add,tags,stuff,source):
 	global sw1
 	if sw1 == 1:
-		print("letter printed:"+stuff[1])
+		cprint("letter printed:"+stuff[1],'grey')
 
 def printNumber(add,tags,stuff,source):
 	global sw1
 	if sw1 == 1:
-		print("number printed:"+stuff[1])
+		cprint("number printed:"+stuff[1],'grey')
 
 def printSymbol(add,tags,stuff,source):
 	global sw1
 	if sw1 == 1:
-		print("symbol printed:"+stuff[1])
+		cprint("symbol printed:"+stuff[1],'grey')
 
 def printLinebreak(add,tags,stuff,source):
 	global sw1
 	if sw1 == 1:
-		print("line break printed")
+		cprint("line break printed",'grey')
 
 # These are coming from SuperCollider
 s.addMsgHandler("/heartbeat/1", heartbeat)
