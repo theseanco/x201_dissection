@@ -77,7 +77,8 @@ int switchlen = 100;
 int masterswitch = 0;
 
 void setup() {
-  size(1280, 800);
+  //size(1280, 800);
+  fullScreen(0);
   oscP5 = new OscP5(this, 12000);
   python = new NetAddress("127.0.0.1", 9999);
   supercollider = new NetAddress("127.0.0.1", 57120);
