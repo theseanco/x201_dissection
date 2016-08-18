@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Workspace>
-<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="VirtualConsole">
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FunctionManager">
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.10.4</Version>
@@ -530,7 +530,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="100" Y="175" Width="440" Height="90"/>
+    <WindowState Visible="False" X="100" Y="175" Width="440" Height="90"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -538,7 +538,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Heartbeat Chaser  0 - Faint" ID="12" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="10" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -552,7 +552,7 @@
      <Input Universe="0" Channel="19627"/>
     </Button>
     <Button Caption="Heartbeat Chaser 1 - Weak" ID="13" Icon="">
-     <WindowState Visible="True" X="80" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="80" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -566,7 +566,7 @@
      <Input Universe="0" Channel="13643"/>
     </Button>
     <Button Caption="Heartbeat Chaser 2 - Medium" ID="14" Icon="">
-     <WindowState Visible="True" X="150" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="150" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -580,7 +580,7 @@
      <Input Universe="0" Channel="19817"/>
     </Button>
     <Button Caption="Heartbeat Chaser 3 - Strong" ID="15" Icon="">
-     <WindowState Visible="True" X="220" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="220" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -594,7 +594,7 @@
      <Input Universe="0" Channel="2558"/>
     </Button>
     <Button Caption="Heartbeat Chaser 4 - Heavy" ID="16" Icon="">
-     <WindowState Visible="True" X="290" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="290" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -608,7 +608,7 @@
      <Input Universe="0" Channel="6537"/>
     </Button>
     <Button Caption="Heartbeat Chaser 5 - Intense" ID="17" Icon="">
-     <WindowState Visible="True" X="360" Y="10" Width="70" Height="70"/>
+     <WindowState Visible="False" X="360" Y="10" Width="70" Height="70"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -630,7 +630,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="100" Y="280" Width="140" Height="80"/>
+    <WindowState Visible="False" X="100" Y="280" Width="140" Height="80"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -638,7 +638,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Envelope Off Animation" ID="2" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="60" Height="60"/>
+     <WindowState Visible="False" X="10" Y="10" Width="60" Height="60"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -652,7 +652,7 @@
      <Input Universe="0" Channel="44886"/>
     </Button>
     <Button Caption="Envelope On Animation" ID="3" Icon="">
-     <WindowState Visible="True" X="70" Y="10" Width="60" Height="60"/>
+     <WindowState Visible="False" X="70" Y="10" Width="60" Height="60"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -667,7 +667,7 @@
     </Button>
    </Frame>
    <Button Caption="Light 1 glow animation" ID="4" Icon="">
-    <WindowState Visible="True" X="275" Y="305" Width="50" Height="50"/>
+    <WindowState Visible="False" X="275" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -688,7 +688,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="830" Y="295" Width="200" Height="120"/>
+    <WindowState Visible="False" X="830" Y="295" Width="200" Height="120"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -696,7 +696,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Slider Caption="Slider 5" ID="5" WidgetStyle="Slider" InvertedAppearance="false">
-     <WindowState Visible="True" X="5" Y="0" Width="60" Height="100"/>
+     <WindowState Visible="False" X="5" Y="0" Width="60" Height="100"/>
      <Appearance>
       <FrameStyle>Sunken</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -706,7 +706,7 @@
      </Appearance>
      <Input Universe="0" Channel="32281"/>
      <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None" Monitor="false">Level</SliderMode>
-     <Level LowLimit="0" HighLimit="255" Value="0">
+     <Level LowLimit="0" HighLimit="255" Value="2">
       <Channel Fixture="1">0</Channel>
       <Channel Fixture="1">3</Channel>
       <Channel Fixture="1">6</Channel>
@@ -721,7 +721,7 @@
      </Playback>
     </Slider>
     <Slider Caption="Slider 6" ID="6" WidgetStyle="Slider" InvertedAppearance="false">
-     <WindowState Visible="True" X="70" Y="0" Width="60" Height="100"/>
+     <WindowState Visible="False" X="70" Y="0" Width="60" Height="100"/>
      <Appearance>
       <FrameStyle>Sunken</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -731,7 +731,7 @@
      </Appearance>
      <Input Universe="0" Channel="21007"/>
      <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None" Monitor="false">Level</SliderMode>
-     <Level LowLimit="0" HighLimit="255" Value="0">
+     <Level LowLimit="0" HighLimit="255" Value="255">
       <Channel Fixture="1">1</Channel>
       <Channel Fixture="1">4</Channel>
       <Channel Fixture="1">7</Channel>
@@ -746,7 +746,7 @@
      </Playback>
     </Slider>
     <Slider Caption="Slider 7" ID="7" WidgetStyle="Slider" InvertedAppearance="false">
-     <WindowState Visible="True" X="140" Y="0" Width="60" Height="100"/>
+     <WindowState Visible="False" X="140" Y="0" Width="60" Height="100"/>
      <Appearance>
       <FrameStyle>Sunken</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -756,7 +756,7 @@
      </Appearance>
      <Input Universe="0" Channel="41900"/>
      <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None" Monitor="false">Level</SliderMode>
-     <Level LowLimit="0" HighLimit="255" Value="0">
+     <Level LowLimit="0" HighLimit="255" Value="145">
       <Channel Fixture="1">2</Channel>
       <Channel Fixture="1">5</Channel>
       <Channel Fixture="1">8</Channel>
@@ -779,7 +779,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="100" Y="480" Width="340" Height="100"/>
+    <WindowState Visible="False" X="100" Y="480" Width="340" Height="100"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -787,7 +787,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Letter Chaser" ID="9" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="10" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -801,7 +801,7 @@
      <Input Universe="0" Channel="27297"/>
     </Button>
     <Button Caption="Number Chaser" ID="10" Icon="">
-     <WindowState Visible="True" X="85" Y="5" Width="80" Height="80"/>
+     <WindowState Visible="False" X="85" Y="5" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -815,7 +815,7 @@
      <Input Universe="0" Channel="48953"/>
     </Button>
     <Button Caption="Symbol Chaser" ID="18" Icon="">
-     <WindowState Visible="True" X="170" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="170" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -829,7 +829,7 @@
      <Input Universe="0" Channel="48105"/>
     </Button>
     <Button Caption="Line Break Chaser" ID="19" Icon="">
-     <WindowState Visible="True" X="250" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="250" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -844,7 +844,7 @@
     </Button>
    </Frame>
    <Button Caption="Light 2 glow animation" ID="20" Icon="">
-    <WindowState Visible="True" X="330" Y="305" Width="50" Height="50"/>
+    <WindowState Visible="False" X="330" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -858,7 +858,7 @@
     <Input Universe="0" Channel="50482"/>
    </Button>
    <Button Caption="light 3 glow" ID="21" Icon="">
-    <WindowState Visible="True" X="385" Y="305" Width="50" Height="50"/>
+    <WindowState Visible="False" X="385" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -872,7 +872,7 @@
     <Input Universe="0" Channel="55689"/>
    </Button>
    <Button Caption="Light 4 glow" ID="22" Icon="">
-    <WindowState Visible="True" X="440" Y="305" Width="50" Height="50"/>
+    <WindowState Visible="False" X="440" Y="305" Width="50" Height="50"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -893,7 +893,7 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <WindowState Visible="True" X="1340" Y="340" Width="340" Height="100"/>
+    <WindowState Visible="False" X="1340" Y="340" Width="340" Height="100"/>
     <AllowChildren>False</AllowChildren>
     <AllowResize>False</AllowResize>
     <ShowHeader>False</ShowHeader>
@@ -901,7 +901,7 @@
     <Collapsed>False</Collapsed>
     <Disabled>False</Disabled>
     <Button Caption="Boxes Chaser" ID="24" Icon="">
-     <WindowState Visible="True" X="10" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="10" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -915,7 +915,7 @@
      <Input Universe="0" Channel="45716"/>
     </Button>
     <Button Caption="Horizontal Line Chaser" ID="25" Icon="">
-     <WindowState Visible="True" X="90" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="90" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -929,7 +929,7 @@
      <Input Universe="0" Channel="52594"/>
     </Button>
     <Button Caption="Stress Test Strobe" ID="26" Icon="">
-     <WindowState Visible="True" X="170" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="170" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
@@ -943,7 +943,7 @@
      <Input Universe="0" Channel="32870"/>
     </Button>
     <Button Caption="Vertical Line Chaser" ID="27" Icon="">
-     <WindowState Visible="True" X="245" Y="10" Width="80" Height="80"/>
+     <WindowState Visible="False" X="245" Y="10" Width="80" Height="80"/>
      <Appearance>
       <FrameStyle>None</FrameStyle>
       <ForegroundColor>Default</ForegroundColor>
