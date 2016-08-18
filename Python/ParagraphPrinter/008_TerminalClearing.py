@@ -179,8 +179,8 @@ def OSCPrintScript(add, tags, stuff, source):
             fillCode()
 			# Clear terminal
             sys.stderr.write("\x1b[2J\x1b[H")
-			# print blurb
-			print ('\033[4m'+"AAWAW is A Work About Work \n Investigate this piece of work with the switches below. \n Parts of the work will be rendered as sound, text and light. \n By Sean Cotterill for Creative Arts Practice MA."+'\033[0m'+" \n \n ")
+            # print blurb
+            print ('\033[4m'+"AAWAW is A Work About Work\n\nInvestigate this piece of work with the switches below.\nParts of the work will be rendered as sound, text and light.\n\nBy Sean Cotterill for Creative Arts Practice MA."+'\033[0m'+"\n\n")
             #reset character and null switch
             character = 0
             sw4 = 0
