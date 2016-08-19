@@ -180,7 +180,7 @@ def OSCPrintScript(add, tags, stuff, source):
 			# Clear terminal
             sys.stderr.write("\x1b[2J\x1b[H")
             # print blurb
-            print ('\033[4m'+"AAWAW is A Work About Work\n\nInvestigate this piece of work with the switches below.\nParts of the work will be rendered as sound, text and light.\n\nBy Sean Cotterill for Creative Arts Practice MA."+'\033[0m'+"\n\n")
+            print ('\033[4m'+"AAWAW (AAWAW is A Work About Work)\n\nInvestigate this interactive work by interacting with it, lightly touch the panels below.\nThe parts of the work that make it 'work' will be rendered as sound, text and light.\n\nBy Sean Cotterill for Creative Arts Practice MA 2016."+'\033[0m'+"\n\n")
             #reset character and null switch
             character = 0
             sw4 = 0
