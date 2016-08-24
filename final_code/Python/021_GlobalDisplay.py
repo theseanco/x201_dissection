@@ -12,10 +12,10 @@ the basic structures of that file to implement a very simple bi-directional comm
 
 #!/usr/bin/env python
 
-# TODO: Switch de-bouncing
-# TODO: Format other code to be printed by paragraph
-# TODO: ask tom about conditional statements for the letter printer: How can I print when it is on, and not print when it is OFF
-# TODO: Come up with appropriate names for each switch and label them when the switch is on - i.e. INFORMATION DISPLAY ON, ELECTROMAGNETIC SOUND ON.
+# 
+# 
+# 
+#
 
 import socket, OSC, re, time, threading, math, struct, random, os, psutil, sys
 from numpy import interp
