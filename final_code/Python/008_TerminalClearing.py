@@ -52,12 +52,14 @@ code = ''
 # open code to be read and split into paragraphs
 pyscript = open(os.path.join(os.path.dirname(__file__), 'TestScripts/python.py'))
 pyparagraph = []
+pyscript2 = open(os.path.join(os.path.dirname(__file__), 'TestScripts/python2.py'))
+pyparagraph2 = []
 scscript = open(os.path.join(os.path.dirname(__file__), 'TestScripts/supercollider.scd'))
 scparagraph = []
 pdescript = open(os.path.join(os.path.dirname(__file__), 'TestScripts/processing.pde'))
 pdeparagraph = []
 # fill array with script names to be called later
-scripts = [scparagraph, pdeparagraph, pyparagraph]
+scripts = [scparagraph, pdeparagraph, pyparagraph, pyparagraph2]
 
 letterexp = re.compile('[a-zA-Z]')
 numberexp = re.compile('[0-9]')
@@ -77,6 +79,7 @@ def chopscript(script,out):
 
 # calls the function on each file to chop them all up
 chopscript(pyscript,pyparagraph)
+chopscript(pyscript2,pyparagraph2)
 chopscript(pdescript,pdeparagraph)
 chopscript(scscript,scparagraph)
 
