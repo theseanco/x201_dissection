@@ -2,14 +2,14 @@
 
  master processing sketch
  
- TODO:
  
- - OSC Protocol for sending data to SuperCollider and Python
- - Print data to console when necessary
- - Sonification protocol for visuals
- - OSC Protocol for recieving data from Python
- - Figure out how to send numbers of boxes/lines/etc
- - Supercollider-side message handling & checking
+ 
+
+
+
+
+
+
  
  */
 
